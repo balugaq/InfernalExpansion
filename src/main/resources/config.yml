@@ -1,0 +1,14 @@
+messages:
+  thermal-walk-rune:
+    success: "&aYou applied the rune to this item successfully. Now has &6Thermal Walk I&a."
+    fail: "&cYou can only apply this rune to a single item."
+    no-item: "&cYou should throw the item which you want this rune to be applied."
+  portable-nether-teleporter:
+    nether-disabled: "&cNether is currently disabled on this server."
+    nether-world-not-set: "&cNether world is not set in the config. Ask a server admin."
+    nether-world-not-found: "&cNether world in the config doesn't exists in the server."
+    already-on-world: "&cYou are already on the nether."
+    teleporting: "&dTeleporting..."
+    already-being-teleported: "&cYou are already being teleported"
+
+default-nether-world: "world_nether"
