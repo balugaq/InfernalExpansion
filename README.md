@@ -6,8 +6,8 @@
 [Click here](https://github.com/NotKirzu/InfernalExpansion/releases)
 
 ### Requirements:
-**Java 17**
-**Paper 1.18**
+**Java 17** <br>
+**Paper 1.18** <br>
 **[Slimefun RC-31](https://github.com/Slimefun/Slimefun4/releases/tag/RC-31)**
 
 ### Support, Bugs or Suggestions
