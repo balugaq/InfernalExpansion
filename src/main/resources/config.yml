@@ -12,3 +12,7 @@ messages:
     already-being-teleported: "&cYou are already being teleported"
 
 default-nether-world: "world_nether"
+machines:
+  piglin-attractor:
+    radius: 32
+bed-rune-radius: 20

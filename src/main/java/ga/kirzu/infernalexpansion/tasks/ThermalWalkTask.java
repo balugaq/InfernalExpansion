@@ -73,7 +73,10 @@ public class ThermalWalkTask implements Runnable {
                     ++count;
                 } else {
                     for (Location loc : blocks) {
-                        loc.getBlock().setType(Material.LAVA);
+                        Block block = loc.getBlock();
+                        if (block.getType() == Material.OBSIDIAN) {
+                            block.setType(Material.LAVA);
+                        }
                     }
                     this.cancel();
                 }

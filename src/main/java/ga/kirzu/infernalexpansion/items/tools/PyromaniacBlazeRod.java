@@ -13,7 +13,7 @@ import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
-import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class PyromaniacBlazeRod extends SlimefunItem implements Rechargeable {
 
@@ -49,7 +49,7 @@ public class PyromaniacBlazeRod extends SlimefunItem implements Rechargeable {
 
                 for (int x = centerX - radius; x < centerX + radius; x++) {
                     for (int z = centerZ - radius; z < centerZ + radius; z++) {
-                        if (new Random().nextFloat() > 0.9) {
+                        if (ThreadLocalRandom.current().nextFloat() > 0.9) {
                             int y = player.getWorld().getHighestBlockYAt(x, z);
                             Block block1 = new Location(world, x, y, z).getBlock();
                             Block block2 = new Location(world, x, y + 1, z).getBlock();
