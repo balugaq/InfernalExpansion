@@ -8,11 +8,13 @@ messages:
     nether-world-not-set: "&cNether world is not set in the config. Ask a server admin."
     nether-world-not-found: "&cNether world in the config doesn't exists in the server."
     already-on-world: "&cYou are already on the nether."
+    cant-use-in-end: "&cYou can't travel to the nether from the End"
     teleporting: "&dTeleporting..."
     already-being-teleported: "&cYou are already being teleported"
 
 default-nether-world: "world_nether"
+travel-to-nether-from-end: false # If you wanna be able to use the Portable Nether Teleporter in the end
+bed-rune-radius: 20
 machines:
   piglin-attractor:
     radius: 32
-bed-rune-radius: 20

@@ -29,7 +29,16 @@ public class PiglinTalisman extends Talisman {
     }
 
     @ParametersAreNonnullByDefault
-    public static boolean trigger(Event e, SlimefunItem item, boolean sendMessage) {
+    public static boolean trigger(Event e, SlimefunItem item) {
+        Player p = getPlayerByEventType(e);
+        if (p == null) {
+            return false;
+        }
+        return trigger(p, item);
+    }
+
+    @ParametersAreNonnullByDefault
+    public static boolean trigger(Player p, SlimefunItem item) {
         if (!(item instanceof Talisman talisman)) {
             return false;
         }
@@ -38,22 +47,15 @@ public class PiglinTalisman extends Talisman {
             return false;
         }
 
-        Player p = getPlayerByEventType(e);
-
         Object canEffectsBeApplied = access(talisman.getClass(), "canEffectsBeApplied", p);
-        if (p == null || (canEffectsBeApplied != null && !((boolean) canEffectsBeApplied))) {
+        if ((canEffectsBeApplied != null && !((boolean) canEffectsBeApplied))) {
             return false;
         }
 
         ItemStack talismanItem = talisman.getItem();
 
         if (SlimefunUtils.containsSimilarItem(p.getInventory(), talismanItem, true)) {
-            if (talisman.canUse(p, true)) {
-                access(Talisman.class, "activateTalisman", e, p, p.getInventory(), talisman, talismanItem, sendMessage);
-                return true;
-            } else {
-                return false;
-            }
+            return talisman.canUse(p, true);
         } else {
             Object enderVariant = access(talisman.getClass(), "getEnderVariant");
             if (!(enderVariant instanceof ItemStack enderTalisman)) {
@@ -61,12 +63,7 @@ public class PiglinTalisman extends Talisman {
             }
 
             if (SlimefunUtils.containsSimilarItem(p.getEnderChest(), enderTalisman, true)) {
-                if (talisman.canUse(p, true)) {
-                    access(Talisman.class, "activateTalisman", e, p, p.getEnderChest(), talisman, enderTalisman, sendMessage);
-                    return true;
-                } else {
-                    return false;
-                }
+                return talisman.canUse(p, true);
             } else {
                 return false;
             }

@@ -18,7 +18,7 @@ public class TalismanListener implements Listener {
             return;
         }
 
-        if (PiglinTalisman.trigger(event, InfernalItems.PIGLIN_TALISMAN.getItem(), false)) {
+        if (PiglinTalisman.trigger(event, InfernalItems.PIGLIN_TALISMAN.getItem())) {
             event.setCancelled(true);
         }
     }

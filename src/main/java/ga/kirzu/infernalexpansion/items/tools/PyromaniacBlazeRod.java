@@ -41,27 +41,39 @@ public class PyromaniacBlazeRod extends SlimefunItem implements Rechargeable {
 
             if (removeItemCharge(item, COST)) {
                 Location loc = player.getLocation();
-                World world = player.getWorld();
                 int centerX = loc.getBlockX();
                 int centerZ = loc.getBlockZ();
-                int playerY = loc.getBlockY();
                 int radius = 5;
 
                 for (int x = centerX - radius; x < centerX + radius; x++) {
                     for (int z = centerZ - radius; z < centerZ + radius; z++) {
                         if (ThreadLocalRandom.current().nextFloat() > 0.9) {
-                            int y = player.getWorld().getHighestBlockYAt(x, z);
-                            Block block1 = new Location(world, x, y, z).getBlock();
-                            Block block2 = new Location(world, x, y + 1, z).getBlock();
-                            if (Math.abs(y - playerY) <= radius) {
-                                if (block1.isSolid() && block2.getType() == Material.AIR) {
-                                    block2.setType(Material.FIRE);
-                                }
+                            Block block = getHighestBlock(player, x, z, radius);
+                            if (block != null && block.getY() != loc.getBlockY() && x != centerX && z != centerZ) {
+                                block.setType(Material.FIRE);
                             }
                         }
                     }
                 }
             }
         };
+    }
+
+    private Block getHighestBlock(Player player, int x, int z, int radius) {
+        Location playerLoc = player.getLocation();
+        World world = player.getWorld();
+        int centerY = playerLoc.getBlockY();
+        Block block = null;
+        for (int currentY = centerY - radius; currentY <= centerY + radius; currentY++) {
+            Block actualBlock = world.getBlockAt(x, currentY, z);
+            Block lastBlock = world.getBlockAt(x, currentY - 1, z);
+
+            if (lastBlock.isSolid() && actualBlock.getType() == Material.AIR) {
+                block = actualBlock;
+                break;
+            }
+        }
+
+        return block;
     }
 }

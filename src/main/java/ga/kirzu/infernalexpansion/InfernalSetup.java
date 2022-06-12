@@ -4,6 +4,7 @@ import ga.kirzu.infernalexpansion.items.blocks.PiglinAttractor;
 import ga.kirzu.infernalexpansion.items.runes.BedRune;
 import ga.kirzu.infernalexpansion.items.runes.ThermalWalkRune;
 import ga.kirzu.infernalexpansion.items.talismans.PiglinTalisman;
+import ga.kirzu.infernalexpansion.items.tools.FireballLauncher;
 import ga.kirzu.infernalexpansion.items.tools.PortableNetherTeleporter;
 import ga.kirzu.infernalexpansion.items.tools.PyromaniacBlazeRod;
 import ga.kirzu.infernalexpansion.listeners.RuneListener;
@@ -64,11 +65,15 @@ public class InfernalSetup {
                 new ItemStack(Material.OBSIDIAN), SlimefunItems.PORTABLE_TELEPORTER, new ItemStack(Material.OBSIDIAN),
                 new ItemStack(Material.NETHER_STAR), SlimefunItems.REINFORCED_PLATE, new ItemStack(Material.NETHER_STAR),
         }).register(INSTANCE);
-
         new PyromaniacBlazeRod(ITEM_GROUP, InfernalItems.PYROMANIAC_BLAZE_ROD, RecipeType.MAGIC_WORKBENCH, new ItemStack[]{
                 null, SlimefunItems.LAVA_CRYSTAL, null,
                 null, new ItemStack(Material.BLAZE_ROD), null,
                 null, new ItemStack(Material.FLINT_AND_STEEL), null
+        }).register(INSTANCE);
+        new FireballLauncher(ITEM_GROUP, InfernalItems.FIREBALL_LAUNCHER, RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[] {
+                SlimefunItems.REINFORCED_PLATE, null, SlimefunItems.REINFORCED_PLATE,
+                SlimefunItems.COPPER_WIRE, new ItemStack(Material.FIRE_CHARGE), SlimefunItems.COPPER_WIRE,
+                SlimefunItems.REINFORCED_PLATE, null, SlimefunItems.REINFORCED_PLATE
         }).register(INSTANCE);
 
         new PiglinTalisman(InfernalItems.PIGLIN_TALISMAN, new ItemStack[]{

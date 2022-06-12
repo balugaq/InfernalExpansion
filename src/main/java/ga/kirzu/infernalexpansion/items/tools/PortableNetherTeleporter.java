@@ -66,6 +66,13 @@ public class PortableNetherTeleporter extends SlimefunItem implements Rechargeab
                 return;
             }
 
+            if (CONFIG.contains("travel-to-nether-from-end")) {
+                if (!CONFIG.getBoolean("travel-to-nether-from-end") && player.getWorld().getEnvironment() == World.Environment.THE_END) {
+                    InfernalUtils.sendMessage(player, "portable-nether-teleporter.cant-use-in-end");
+                    return;
+                }
+            }
+
             World world = server.getWorld(CONFIG.getString("default-nether-world"));
 
             if (world == null) {

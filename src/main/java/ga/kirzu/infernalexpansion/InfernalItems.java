@@ -16,9 +16,10 @@ public class InfernalItems {
 
     public static final SlimefunItemStack PORTABLE_NETHER_TELEPORTER
             = new SlimefunItemStack("PORTABLE_NETHER_TELEPORTER", Material.NETHER_STAR, "&dPortable Nether Teleporter", "", "&fTeleports you to the nether from anywhere", "", LoreBuilder.powerCharged(0, 250), "", LoreBuilder.RIGHT_CLICK_TO_USE);
-
     public static final SlimefunItemStack PYROMANIAC_BLAZE_ROD
             = new SlimefunItemStack("PYROMANIAC_BLAZE_ROD", Material.BLAZE_ROD, "&6Pyromaniac's Blaze Rod", "", "&fIgnite surrounding blocks in a 5-blocks radius", "", LoreBuilder.powerCharged(0, 200), "", LoreBuilder.RIGHT_CLICK_TO_USE);
+    public static final SlimefunItemStack FIREBALL_LAUNCHER
+            = new SlimefunItemStack("FIREBALL_LAUNCHER", Material.FIRE_CHARGE, "&6Fireball Launcher", "", "&fThrows a fireball to the direction", "&fyou are looking for", "", LoreBuilder.powerCharged(0, 250), "", LoreBuilder.RIGHT_CLICK_TO_USE);
 
     public static final SlimefunItemStack PIGLIN_TALISMAN
             = new SlimefunItemStack("PIGLIN_TALISMAN", Material.EMERALD, "&aTalisman of the Piglins", "", "&fWhile you have this Talisman", "&fin your inventory zombified piglins", "&fwill stop from targeting you");

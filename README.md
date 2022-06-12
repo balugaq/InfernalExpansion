@@ -41,3 +41,7 @@
 * - Ignite surrounding blocks in a radius of 5 meters
 * - Consumption: 25 J per use
 * - Energy capacity: 200 J
+* **Fireball Launcher:**
+* - Throws a fireball to the direction you are looking for.
+* - Consumption: 25 J per use
+* - Energy capacity: 250 J

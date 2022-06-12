@@ -40,7 +40,7 @@ public class InfernalUtils {
         if (message == null) {
             message = key;
         }
-        message = "&[7&cInfernalExpansion&7] &7" + message;
+        message = "&7[&cInfernalExpansion&7] &7" + message;
 
         recipient.sendMessage(ChatColor.translateAlternateColorCodes(
                 '&', message
