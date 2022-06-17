@@ -22,9 +22,9 @@ public class InfernalItems {
             = new SlimefunItemStack("FIREBALL_LAUNCHER", Material.FIRE_CHARGE, "&6火球发射器", "", "&f向你的正前方发射火球", "", LoreBuilder.powerCharged(0, 250), "", LoreBuilder.RIGHT_CLICK_TO_USE);
 
     public static final SlimefunItemStack PIGLIN_TALISMAN
-            = new SlimefunItemStack("PIGLIN_TALISMAN", Material.EMERALD, "&a猪灵护身符", "", "&f当你的背包中有这个护身符时", "&f猪灵将不再对你有仇恨");
+            = new SlimefunItemStack("PIGLIN_TALISMAN", Material.EMERALD, "&a猪灵护身符", "", "&f当你的背包中有这个护身符时", "&f僵尸猪灵将不再对你有仇恨");
 
     public static final SlimefunItemStack PIGLIN_ATTRACTOR
-            = new SlimefunItemStack("PIGLIN_ATTRACTOR", Material.RESPAWN_ANCHOR, "&e猪灵吸引器", "", "&f充电时", "&fc吸引附近的猪灵", "", LoreBuilder.powerBuffer(2_000), LoreBuilder.powerPerSecond(25));
+            = new SlimefunItemStack("PIGLIN_ATTRACTOR", Material.RESPAWN_ANCHOR, "&e猪灵吸引器", "", "&f充电时", "&fc吸引附近的僵尸猪灵", "", LoreBuilder.powerBuffer(2_000), LoreBuilder.powerPerSecond(25));
 
 }
