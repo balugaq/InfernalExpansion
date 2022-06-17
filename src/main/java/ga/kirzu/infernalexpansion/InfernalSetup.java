@@ -29,7 +29,7 @@ public class InfernalSetup {
     private final static ItemGroup ITEM_GROUP
             = new ItemGroup(
             new NamespacedKey(INSTANCE, "infernal_runes"),
-            new ColoredFireworkStar(Color.fromRGB(0, 0, 0), "&cInfernalExpansion")
+            new ColoredFireworkStar(Color.fromRGB(0, 0, 0), "&c下界工艺")
     );
 
     private static boolean initialized = false;
