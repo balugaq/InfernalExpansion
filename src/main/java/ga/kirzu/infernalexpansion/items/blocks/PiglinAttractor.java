@@ -37,13 +37,13 @@ public class PiglinAttractor extends SlimefunItem implements InventoryBlock, Ene
     private final static int ENERGY_CAPACITY = 2_000;
 
     private final static ItemStack LOADING_MENU
-            = new CustomItemStack(Material.GRAY_STAINED_GLASS_PANE, "&7Loading...");
+            = new CustomItemStack(Material.GRAY_STAINED_GLASS_PANE, "&7加载中...");
     private final static ItemStack INVALID_BIOME_MENU
-            = new CustomItemStack(Material.RED_STAINED_GLASS_PANE, "&cInvalid biome.");
+            = new CustomItemStack(Material.RED_STAINED_GLASS_PANE, "&c无效群系");
     private final static ItemStack NOT_ENERGY_MENU
-            = new CustomItemStack(Material.RED_STAINED_GLASS_PANE, "&cNot enough energy.");
+            = new CustomItemStack(Material.RED_STAINED_GLASS_PANE, "&c没有足够电力");
     private final static ItemStack WORKING_MENU
-            = new CustomItemStack(Material.GREEN_STAINED_GLASS_PANE, "&aWorking!");
+            = new CustomItemStack(Material.GREEN_STAINED_GLASS_PANE, "&a工作中!");
 
     private final static io.github.thebusybiscuit.slimefun4.libraries.dough.config.Config CONFIG
             = InfernalExpansion.getCfg();
@@ -51,7 +51,7 @@ public class PiglinAttractor extends SlimefunItem implements InventoryBlock, Ene
     public PiglinAttractor(ItemGroup itemGroup, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe) {
         super(itemGroup, item, recipeType, recipe);
 
-        createPreset(this, "&5Piglin Attractor", this::createMenu);
+        createPreset(this, "&5猪灵吸引器", this::createMenu);
     }
 
     private void createMenu(BlockMenuPreset preset) {
